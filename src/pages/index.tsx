@@ -1,9 +1,16 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
+import Head from 'next/head'
+import {
+  BuyMeCoffee,
+  Cover,
+  PostGrid,
+  Section,
+  SocialNetworks,
+  Title,
+} from '~/components'
+import PostItem from '~/components/Post'
 
-import Card from '~/components/Card'
-import Container from '~/components/Container'
-import Welcome from '~/components/Welcome'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { getPosts, type Post, postsQuery } from '~/lib/sanity.queries'
@@ -30,15 +37,32 @@ export default function IndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>,
 ) {
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
+  const total = posts.length
+
   return (
-    <Container>
-      <section>
-        {posts.length ? (
-          posts.map((post) => <Card key={post._id} post={post} />)
-        ) : (
-          <Welcome />
-        )}
-      </section>
-    </Container>
+    <div
+      style={{
+        marginBottom: '1rem',
+      }}
+    >
+      <Head>
+        <title>S.LOBANOVA</title>
+      </Head>
+      <Section>
+        <Cover title="Kak tvoi dela brat" />
+        <SocialNetworks />
+        <BuyMeCoffee />
+      </Section>
+      <Section>
+        <Title type="medium">New Posts</Title>
+        <PostGrid>
+          {posts.map((e) => (
+            <PostItem key={e._id} postData={e} />
+          ))}
+        </PostGrid>
+
+
+      </Section>
+    </div>
   )
 }
