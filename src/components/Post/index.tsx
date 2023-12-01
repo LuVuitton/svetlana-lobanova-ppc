@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Title from '../Title'
 import Image from 'next/image'
 import { urlForImage } from '~/lib/sanity.image'
+import articleIcon from '../../../public/article.svg'
 
 const PostItem = ({ className, postData }: Props) => {
   const { title, body, description, mainImage, publishedDate, slug } = postData
@@ -18,9 +19,9 @@ const PostItem = ({ className, postData }: Props) => {
       </div>
       <div className={s.postContent}>
         <div>
-        <Image
+          <Image
             className="post__cover"
-            src={urlForImage(mainImage).url()}
+            src={mainImage ? urlForImage(mainImage).url() : articleIcon}
             height={100}
             width={100}
             alt="image"

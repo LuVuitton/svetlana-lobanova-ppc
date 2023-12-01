@@ -1,4 +1,4 @@
-import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { GetServerSideProps, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
 import Head from 'next/head'
 import {
@@ -16,11 +16,13 @@ import { getClient } from '~/lib/sanity.client'
 import { getPosts, type Post, postsQuery } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 
-export const getStaticProps: GetStaticProps<
+export const getServerSideProps: GetServerSideProps<
   SharedPageProps & {
     posts: Post[]
   }
-> = async ({ draftMode = false }) => {
+> = async ({ req, res  }) => {
+  const draftMode = Boolean(req?.headers.cookie?.includes('draftMode=true'));
+
   const client = getClient(draftMode ? { token: readToken } : undefined)
   const posts = await getPosts(client)
 
@@ -34,8 +36,10 @@ export const getStaticProps: GetStaticProps<
 }
 
 export default function IndexPage(
-  props: InferGetStaticPropsType<typeof getStaticProps>,
+  // props: InferGetStaticPropsType<typeof getServerSideProps>,
+  props:any,
 ) {
+  
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   const total = posts.length
 
@@ -49,7 +53,7 @@ export default function IndexPage(
         <title>S.LOBANOVA</title>
       </Head>
       <Section>
-        <Cover title="Kak tvoi dela brat" />
+        <Cover title="Kak tvoi dela" />
         <SocialNetworks />
         <BuyMeCoffee />
       </Section>
