@@ -3,9 +3,18 @@ import type { ImageAsset, Slug } from '@sanity/types'
 import groq from 'groq'
 import { type SanityClient } from 'next-sanity'
 
-export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedDate desc)`
+export async function getPosts(
+  client: SanityClient,
+  start: number,
+  end: number,
+): Promise<{posts: Post[], total:number}> {
 
-export async function getPosts(client: SanityClient): Promise<Post[]> {
+  // const postsQuery = groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
+  const postsQuery = groq`{
+    "posts": *[_type == "post" && defined(slug.current)] | order(_createdAt desc) [${start}...${end}],
+    "total": count(*[_type == "post" && defined(slug.current)])
+  }`;
+
   return await client.fetch(postsQuery)
 }
 
@@ -34,5 +43,5 @@ export interface Post {
   slug: Slug
   meta_title: string
   description: string
-  publishedDate?: Date
+  // publishedDate?: Date
 }

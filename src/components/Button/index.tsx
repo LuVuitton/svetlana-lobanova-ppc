@@ -17,7 +17,7 @@ const Button = ({ className, children, disabled, onClick }: Props) => {
 export default Button
 
 type Props = {
-  className: string
+  className?: string
   children: React.ReactNode
   onClick: () => void
   disabled: boolean

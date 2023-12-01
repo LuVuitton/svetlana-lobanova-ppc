@@ -63,12 +63,12 @@ export default defineType({
       },
       group: 'meta',
     }),
-    defineField({
-      name: 'publishedDate',
-      title: 'Published Date',
-      type: 'date',
-      group: 'meta',
-    }),
+    // defineField({
+    //   name: 'publishedDate',
+    //   title: 'Published Date',
+    //   type: 'date',
+    //   group: 'meta',
+    // }),
   ],
   preview: {
     select: {
