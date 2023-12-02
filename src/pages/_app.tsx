@@ -3,7 +3,9 @@ import '~/styles/reset.scss'
 
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
-import { lazy } from 'react'
+import { Fragment, lazy } from 'react'
+import Layout from '~/components/layout'
+import EmptyLayout from '~/components/EmptyLayout/EmptyLayout'
 
 export interface SharedPageProps {
   draftMode: boolean
@@ -34,8 +36,13 @@ const serif = PT_Serif({
 export default function App({
   Component,
   pageProps,
+  router,
 }: AppProps<SharedPageProps>) {
   const { draftMode, token } = pageProps
+
+  const isLayoutNeeded = router.pathname.trim() !== '/'  
+  const LayoutComponent = isLayoutNeeded ? Layout : EmptyLayout
+
   return (
     <>
       <style jsx global>
@@ -48,11 +55,15 @@ export default function App({
         `}
       </style>
       {draftMode ? (
-        <PreviewProvider token={token}>
-          <Component {...pageProps} />
-        </PreviewProvider>
+        <LayoutComponent>
+          <PreviewProvider token={token}>
+            <Component {...pageProps} />
+          </PreviewProvider>
+        </LayoutComponent>
       ) : (
-        <Component {...pageProps} />
+        <LayoutComponent>
+          <Component {...pageProps} />
+        </LayoutComponent>
       )}
     </>
   )

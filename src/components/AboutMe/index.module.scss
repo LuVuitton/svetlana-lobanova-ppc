@@ -1,0 +1,21 @@
+.article {
+    position: relative;
+    padding: 3rem 4rem 3rem 6rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    &Title {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .article {
+        padding: 1rem;
+
+        &Back {
+            position: static;
+        }
+    }
+}
