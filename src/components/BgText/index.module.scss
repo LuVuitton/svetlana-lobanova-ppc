@@ -14,11 +14,13 @@
   margin: 0;
   font-size: 3rem;
   color: rgba(225, 225, 225, .01);
-  background-image: url("https://st2.depositphotos.com/33200684/49884/i/450/depositphotos_498845780-stock-photo-google-ads-logo-on-smartphone.jpg");
+  background-image: url("../../../public/bgText.jpeg");
   background-repeat: repeat;
   -webkit-background-clip: text;
-  animation: animate 15s ease-in-out infinite;
+  animation: animate 9s ease-in-out infinite;
   // text-align: center;
+  animation-direction: reverse; /* Настройка направления анимации */
+
   text-transform: uppercase;
   font-weight: 900;
   @media screen and (min-width: 800px) {

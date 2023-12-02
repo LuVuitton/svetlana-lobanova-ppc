@@ -47,12 +47,12 @@
   position: relative;
 
   &0 {
-    background: url('../../../public/Google_Ads_logo.png') center center
+    background: url('../../../public/Google_Ads_logo-min.png') center center
       no-repeat;
     background-size: 300px;
 
     &:hover {
-      background: url('../../../public/Google_Ads_logo.png') left center
+      background: url('../../../public/Google_Ads_logo-min.png') left center
         no-repeat;
       background-size: 600px;
       background-color: rgba(0, 0, 0, 0.352);
@@ -67,12 +67,12 @@
   }
 
   &1 {
-    background: url('https://cdn-icons-png.flaticon.com/512/3128/3128287.png')
+    background: url('../../../public/Google_Search_logo-min.png')
       center center no-repeat;
     background-size: 300px;
 
     &:hover {
-      background: url('https://cdn-icons-png.flaticon.com/512/3128/3128287.png')
+      background: url('../../../public/Google_Search_logo-min.png')
         left center no-repeat;
       background-size: 600px;
       background-color: rgba(0, 0, 0, 0.352);
@@ -88,12 +88,12 @@
   }
 
   &2 {
-    background: url('../../../public/Google_Shoping_logo.png')
+    background: url('../../../public/Google_Shoping_logo-min.png')
       center center no-repeat;
     background-size: 300px;
 
     &:hover {
-      background: url('../../../public/Google_Shoping_logo.png')
+      background: url('../../../public/Google_Shoping_logo-min.png')
         left center no-repeat;
       background-size: 600px;
       background-color: rgba(0, 0, 0, 0.352);
