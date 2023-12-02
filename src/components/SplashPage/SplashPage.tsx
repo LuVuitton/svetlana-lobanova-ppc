@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styles from './index.module.scss'
 import cl from 'classnames'
+import BgText from '../BgText/BgText'
 
 const SplashPage = () => {
   return (
@@ -19,8 +20,9 @@ const SplashPage = () => {
         </div>
       </div>
       <div className={styles.text}>
-        <p> Svetlana</p>
-        <p> Lobanova</p>
+        {/* <p> Svetlana</p>
+        <p> Lobanova</p> */}
+        <BgText/>
         <div className={styles.skills}>
           <p className={styles.min}>PPC specialist</p>
           <p className={styles.min}>Google Ads & Shopping</p>

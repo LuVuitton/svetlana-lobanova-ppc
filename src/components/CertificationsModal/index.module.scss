@@ -1,0 +1,28 @@
+/* Стили для карточки */
+.card {
+  display: flex;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+
+  .imgWrapper {
+    width: 40%; /* Ширина для блока изображения */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .cardImage {
+      width: 100%; /* Ширина изображения в блоке imgWrapper */
+      height: auto; /* Автоматическая высота изображения */
+      object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполнило свою область */
+    }
+  }
+
+  .cardContent {
+    flex: 1;
+    padding: 20px;
+  }
+}

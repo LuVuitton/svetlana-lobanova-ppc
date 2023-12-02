@@ -40,7 +40,9 @@ export default function App({
 }: AppProps<SharedPageProps>) {
   const { draftMode, token } = pageProps
 
-  const isLayoutNeeded = router.pathname.trim() !== '/'  
+  const isLayoutNeeded = !(router.pathname.trim() === '/' || router.pathname.startsWith('/studio/'));
+
+
   const LayoutComponent = isLayoutNeeded ? Layout : EmptyLayout
 
   return (

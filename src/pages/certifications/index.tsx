@@ -1,10 +1,9 @@
+import CardAnimated from '~/components/CardAnimated/CardAnimated'
 
-  
-  export default function Certifications() {
-    return (
-      <div>
-        <h1>Certifications</h1>
-      </div>
-    )
-  }
-  
+export default function Certifications() {
+  return (
+    <div>
+      <CardAnimated />
+    </div>
+  )
+}

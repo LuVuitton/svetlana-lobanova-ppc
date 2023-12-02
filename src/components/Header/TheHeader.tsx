@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import { useRouter } from 'next/router'
 import BurgerBtn from '../BurgerBtn/BurgerBtn'
+import BurgerMenu from '../BurgerMenu'
 
 const links = [
   {
@@ -29,20 +30,22 @@ const links = [
 const TheHeader: React.FC = () => {
   const router = useRouter()
   const [isMobile, setIsMobile] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 800)
     }
-
     handleResize() // Устанавливаем начальное значение при загрузке страницы
-
     window.addEventListener('resize', handleResize)
-
     return () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
+  const burgerHandler = ()=> {
+    setShowMenu(!showMenu)
+  }
 
   const linksArr = links.map((e) => {
     return (
@@ -61,7 +64,7 @@ const TheHeader: React.FC = () => {
       <header>
         {isMobile ? (
           <ul className={styles.mobileMenu}>
-            <BurgerBtn />
+            <BurgerBtn isOpen={showMenu} callback={burgerHandler} />
             <div className={styles.userName}>Svetlana Lobanova</div>
           </ul>
         ) : (
@@ -71,6 +74,8 @@ const TheHeader: React.FC = () => {
           </ul>
         )}
       </header>
+      <BurgerMenu show={showMenu}/>
+
     </div>
   )
 }

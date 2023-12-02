@@ -1,6 +1,6 @@
 import TheHeader from './Header/TheHeader'
 import styles from '../styles/layout.module.scss'
-import BurgerBtn from './BurgerBtn/BurgerBtn'
+import TheFooter from './Footer/TheFooter'
 
 export default function Layout({ children }) {
   return (
@@ -8,8 +8,8 @@ export default function Layout({ children }) {
       <TheHeader />
       <div className={styles.mainWrapper}>
         <main className={styles.container}>{children}</main>
-        <div>footer</div>
       </div>
+        <TheFooter />
     </>
   )
 }
