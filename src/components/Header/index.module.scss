@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import '../../styles/variables.scss';
 
 // html, body {
 //   margin: 0;
@@ -11,6 +12,26 @@
 // }
 .mainWrapper{
 
+    .mobileMenu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 70px;
+        margin: auto;
+        position: relative;
+        background-color: #323232;
+        z-index: 7;
+        display: flex;
+        .userName {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $whiteText;
+            font-size: 1.5rem;
+        }
+    }
 
 .menu {
   list-style: none;

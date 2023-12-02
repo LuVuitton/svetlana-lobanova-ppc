@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
-import { getClient } from '~/lib/sanity.client'
 import { useRouter } from 'next/router'
+import BurgerBtn from '../BurgerBtn/BurgerBtn'
 
 const links = [
   {
@@ -28,13 +28,23 @@ const links = [
 
 const TheHeader: React.FC = () => {
   const router = useRouter()
+  const [isMobile, setIsMobile] = useState(false)
 
-  // console.log(router)
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 800)
+    }
+
+    handleResize() // Устанавливаем начальное значение при загрузке страницы
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const linksArr = links.map((e) => {
-    console.log("href: ", e.herf);
-    console.log("pathname: ", router.pathname);
-    
     return (
       <li key={e.id}>
         <a
@@ -46,15 +56,20 @@ const TheHeader: React.FC = () => {
       </li>
     )
   })
-
-  // className={styles.active}
   return (
     <div className={styles.mainWrapper}>
       <header>
-        <ul className={styles.menu}>
-          {linksArr}
-          <li className={styles.slider}></li>
-        </ul>
+        {isMobile ? (
+          <ul className={styles.mobileMenu}>
+            <BurgerBtn />
+            <div className={styles.userName}>Svetlana Lobanova</div>
+          </ul>
+        ) : (
+          <ul className={styles.menu}>
+            {linksArr}
+            <li className={styles.slider}></li>
+          </ul>
+        )}
       </header>
     </div>
   )

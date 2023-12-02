@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 @mixin animation($animate...) {
   $max: length($animate);
   $animations: '';
@@ -37,10 +39,10 @@
 }
 
 //theme
-$yellow: #f5d300;
-$black: #292929;
-$bg: #191919;
-$lines: #757474;
+// $yellow: #f5d300;
+// $black: #292929;
+// $bg: #191919;
+// $lines: #757474;
 
 .mainWrapper {
   background-color: $bg;
