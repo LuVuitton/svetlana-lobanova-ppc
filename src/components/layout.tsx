@@ -5,11 +5,11 @@ import TheFooter from './Footer/TheFooter'
 export default function Layout({ children }) {
   return (
     <>
-      <TheHeader />
       <div className={styles.mainWrapper}>
+      <TheHeader /> 
         <main className={styles.container}>{children}</main>
-      </div>
         {/* <TheFooter /> */}
+      </div>
     </>
   )
 }

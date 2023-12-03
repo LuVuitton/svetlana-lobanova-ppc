@@ -1,28 +1,41 @@
 /* Стили для карточки */
 .card {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: 600px;
   margin: 20px auto;
   border-radius: 8px;
   overflow: hidden;
   background-color: #fff;
+}
 
-  .imgWrapper {
-    width: 40%; /* Ширина для блока изображения */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.imgWrapper {
+  width: 40%; /* Ширина для блока изображения */
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
 
-    .cardImage {
-      width: 100%; /* Ширина изображения в блоке imgWrapper */
-      height: auto; /* Автоматическая высота изображения */
-      object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполнило свою область */
-    }
+.cardImage {
+  width: 100%; /* Ширина изображения в блоке imgWrapper */
+  height: auto; /* Автоматическая высота изображения */
+  object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполнило свою область */
+  animation: slideIn 0.4s ease-out forwards; /* Анимация изменения transform */
+  transform: translateX(-100%); /* Начальное положение изображения за пределами контейнера слева */
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0); /* Конечное положение изображения на свое место справа */
   }
+}
 
-  .cardContent {
-    flex: 1;
-    padding: 20px;
-  }
+.cardContent {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
 }
