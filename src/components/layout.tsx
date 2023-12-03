@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       <div className={styles.mainWrapper}>
         <main className={styles.container}>{children}</main>
       </div>
-        <TheFooter />
+        {/* <TheFooter /> */}
     </>
   )
 }

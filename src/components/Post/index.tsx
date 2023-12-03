@@ -1,36 +1,22 @@
 import { Post } from '~/lib/sanity.queries'
 import s from './index.module.scss'
 import cl from 'classnames'
-import Link from 'next/link'
-import Title from '../Title'
-import Image from 'next/image'
+
 import { urlForImage } from '~/lib/sanity.image'
-import articleIcon from '../../../public/article.svg'
+import noArticlePhoto from '../../../public/noArticlePhoto.webp'
+import BlogCard from '../BlogCard/BlogCard'
 
 const PostItem = ({ className, postData }: Props) => {
-  const { title, body, description, mainImage, slug } = postData
+  const { title, body, description, mainImage, slug, _createdAt } = postData
 
   return (
-    <Link href={`post/${slug.current}`} className={cl(className, s.post)}>
-      <div className={s.postLink}>
-        <Title type="small" className={s.postTitle}>
-          {title}
-        </Title>
-
-        <div className={s.postContent}>
-          <div>
-            <Image
-              className="post__cover"
-              src={mainImage ? urlForImage(mainImage).url() : articleIcon}
-              height={100}
-              width={100}
-              alt="image"
-            />
-          </div>
-          <p className={s.postDescription}>{description}</p>
-        </div>
-      </div>
-    </Link>
+      <BlogCard
+        description={description}
+        title={title}
+        img={mainImage ? urlForImage(mainImage).url() : noArticlePhoto}
+        date={_createdAt}
+        link={`post/${slug.current}`}
+      />
   )
 }
 

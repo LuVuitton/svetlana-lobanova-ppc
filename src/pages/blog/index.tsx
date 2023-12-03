@@ -45,10 +45,6 @@ const Blog = (props: { posts: Post[]; total: number }) => {
     setLoading(true)
 
     try {
-      // const data = await fetch(
-      //   `/api/post?start=${loadedAmount}&end=${loadedAmount + LOAD_STEP}`,
-      // ).then((response) => response.json())
-
       const client = getClient()
       const data = await getPosts(
         client,
@@ -71,11 +67,20 @@ const Blog = (props: { posts: Post[]; total: number }) => {
         <title>Blog</title>
       </Head>
       <Title type="medium">Blog</Title>
-      <PostGrid>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: '20px',
+          alignItems: "stretch" /* Растянуть элементы по высоте */
+
+        }}
+      >
         {posts.map((e) => (
           <PostItem key={e._id} postData={e} />
         ))}
-      </PostGrid>
+      </div>
       {showLoadButton && (
         <div
           style={{
