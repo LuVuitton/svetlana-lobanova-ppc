@@ -20,15 +20,15 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* тень */
     text-align: center;
-      transform: scale(0.3); /* Начальный размер */
+    //   transform: scale(0.3); /* Начальный размер */
 
 
-    &.show {
-      opacity: 1; /* Показать модальное окно */
-      visibility: visible;
-      transform: scale(1); /* Увеличение размера */
-      transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out; /* Анимация изменения размера и прозрачности */
-    }
+    // &.show {
+    //   opacity: 1; /* Показать модальное окно */
+    //   visibility: visible;
+    //   transform: scale(1); /* Увеличение размера */
+    //   transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out; /* Анимация изменения размера и прозрачности */
+    // }
 
   }
 

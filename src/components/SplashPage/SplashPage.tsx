@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styles from './index.module.scss'
 import cl from 'classnames'
 import BgText from '../BgText/BgText'
+import { Paralax } from '../Paralax/Paralax'
 
 const SplashPage = () => {
   return (
@@ -20,8 +21,7 @@ const SplashPage = () => {
         </div>
       </div>
       <div className={styles.text}>
-        {/* <p> Svetlana</p>
-        <p> Lobanova</p> */}
+      <Paralax />
         <BgText/>
         <div className={styles.skills}>
           <p className={styles.min}>PPC specialist</p>
