@@ -1,4 +1,4 @@
-const skillData:SkillData = [
+const skillData:SkillData[] = [
   {
     id: 1,
     title: 'Google Ads account audit',
@@ -129,6 +129,9 @@ const skillData:SkillData = [
 ]
 
 export default function HowCanIHelp() {
+
+  console.log(skillData);
+  
   return (
     <div>
       <h1>HowCanIHelp</h1>
