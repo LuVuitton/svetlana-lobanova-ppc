@@ -25,6 +25,11 @@ const links = [
     herf: '/certifications',
     linkName: 'certificate',
   },
+  {
+    id: 5,
+    herf: '/howcanihelp',
+    linkName: 'how I can help you',
+  },
 ]
 
 const TheHeader: React.FC = () => {
@@ -70,7 +75,6 @@ const TheHeader: React.FC = () => {
         ) : (
           <ul className={styles.menu}>
             {linksArr}
-            <li className={styles.slider}></li>
           </ul>
         )}
       </header>

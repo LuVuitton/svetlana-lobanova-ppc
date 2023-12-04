@@ -2,11 +2,11 @@ import { useState } from 'react'
 import CertificationsModal from '../CertificationsModal/CertificationsModal'
 import ModalDialog from '../Modal/Modal'
 import styles from './index.module.scss'
-// import imgAds from '../../../public/Google_Ads_logo.png'
+
 import imgAds from '../../../public/Google_Ads_logo-min.png'
-// import imgSearch from '../../../public/Google_Search_logo.png'
+
 import imgSearch from '../../../public/Google_Search_logo-min.png'
-// import imgShoping from '../../../public/Google_Shoping_logo.png'
+
 import imgShoping from '../../../public/Google_Shoping_logo-min.png'
 
 const cards: Card[] = [
@@ -64,7 +64,7 @@ const CardAnimated: React.FC = () => {
     >
       <div className={styles.border}>
         <h2 className={styles.title}>{e.title}</h2>
-        <div className={styles.icons}>{e.shortDesription}</div>
+        <div className={styles.content}>{e.shortDesription}</div>
       </div>
     </div>
   ))

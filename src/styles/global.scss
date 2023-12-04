@@ -21,21 +21,23 @@ button {
   html,
   body,
   button {
-    font-size: 16px;
+    // font-size: 16px;
   }
 }
 
 :root {
-    // background-color: cadetblue;
-    
-      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  
-
+//   background-color: rgb(255, 193, 148);
+//   background-color: rgb(249, 249, 249);
+//   background: rgb(237, 253, 253);
+background: #fcc707;
 }
 
 body {
-    background-image: url("https://cdn.bitdegree.org/learn/background-example.jpg?780a05c1");
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Background image will not move when scrolling */
-   }
+    color: #292929;
+
+
+  // background-image: url("https://cdn.bitdegree.org/learn/background-example.jpg?780a05c1");
+  // background-position: left top;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed; /* Background image will not move when scrolling */
+}

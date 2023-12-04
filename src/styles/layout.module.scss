@@ -4,14 +4,38 @@
   display: flex;
   flex-direction: column;
 
-  .container {
-    padding-top: 90px;
+  .bg {
+    position: fixed;
+    top: 5%;
+    /* left: 9%; */
+    right: -60%;
+    width: 110%;
+    height: 100%;
+    z-index: -1;
+    // background-image: url('../../public/bgImg.png');
+    background-image: url('../../public/bgImg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    opacity: 0.4  ;
 
-    // background-image: linear-gradient(rgba(255, 156, 75, 0.151), rgba(0, 0, 0, 0.5)),
-    //   url('../../public/Google_Ads_logo-min.png');
+    @media screen and (max-width: 700px) {
+      top: 15%;
+      /* left: 9%; */
+      right: -65%;
+      width: 150%;
+    }
+
+  }
+
+  .container {
+    margin-top: 70px ;
+    padding: 20px;
+
+    // background-color: rgba(4, 4, 4, 0.351)
 
     // /* Set a specific height */
-    // height: 10%;
+    // height: 10%;x
 
     // /* Position and center the image to scale nicely on all screens */
     // background-position: center;

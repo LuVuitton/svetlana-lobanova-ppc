@@ -1,4 +1,8 @@
 // index.module.scss
+@import '../../styles/variables.scss';
+
+$cardColor: rgba(0, 0, 0, 0.147);
+$cardColorHover: rgba(0, 0, 0, 0.346);;
 
 .container {
   max-height: 800px;
@@ -10,128 +14,134 @@
   flex-wrap: wrap;
   margin: 0 auto;
   gap: 10px;
+  // background-color: black;
 }
 
 .border {
   height: 369px;
   width: 290px;
-  background: transparent;
+  // background: transparent;
   border-radius: 10px;
-  transition: border 1s;
+  // transition: border 1s;
   position: relative;
-
-  &:hover {
-    // border: 25px solid rgba(255, 255, 255, 0.316);
-  }
 }
 
 .card {
   height: 379px;
   width: 300px;
-  transition: background 0.8s;
+  // transition: background 0.8s;
   overflow: hidden;
   padding: 15px;
-
   // box-shadow: 28px -1px 94px -44px rgba(0,0,0,0.56);
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   //
+  color: $text;
 
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  transition:
+    background 0.8s,
+    color 0.5s ease; /* Добавляем transition для плавного изменения цвета текста */
 
   &0 {
     background: url('../../../public/Google_Ads_logo-min.png') center center
       no-repeat;
     background-size: 300px;
+    background-color: $cardColor;
 
     &:hover {
       background: url('../../../public/Google_Ads_logo-min.png') left center
         no-repeat;
       background-size: 600px;
-      background-color: rgba(0, 0, 0, 0.352);
+      background-color: $cardColorHover;
+      color: $whiteText;
+
       .title {
         opacity: 1;
       }
-
-      // .fa {
-      //   opacity: 1;
-      // }
+      .content {
+        color: $whiteText;
+      }
     }
   }
 
   &1 {
-    background: url('../../../public/Google_Search_logo-min.png')
-      center center no-repeat;
+    background: url('../../../public/Google_Search_logo-min.png') center center
+      no-repeat;
     background-size: 300px;
+    background-color: $cardColor;
+
 
     &:hover {
-      background: url('../../../public/Google_Search_logo-min.png')
-        left center no-repeat;
+      background: url('../../../public/Google_Search_logo-min.png') left center
+        no-repeat;
       background-size: 600px;
-      background-color: rgba(0, 0, 0, 0.352);
+      background-color: $cardColorHover;
+      color: $whiteText;
 
       .title {
         opacity: 1;
       }
-
-      // .fa {
-      //   opacity: 1;
-      // }
+      .content {
+        color: $whiteText;
+      }
     }
   }
 
   &2 {
-    background: url('../../../public/Google_Shoping_logo-min.png')
-      center center no-repeat;
+    background: url('../../../public/Google_Shoping_logo-min.png') center center
+      no-repeat;
     background-size: 300px;
+    background-color: $cardColor;
+
 
     &:hover {
-      background: url('../../../public/Google_Shoping_logo-min.png')
-        left center no-repeat;
+      background: url('../../../public/Google_Shoping_logo-min.png') left center
+        no-repeat;
       background-size: 600px;
-      background-color: rgba(0, 0, 0, 0.352);
+      background-color: $cardColorHover;
+      color: $whiteText;
+      // transition: color 0.3s ease; /* Добавляем transition для плавного перехода цвета */
 
       .title {
         opacity: 1;
       }
-
-      // .fa {
-      //   opacity: 1;
-      // }
+      .content {
+        color: $whiteText;
+      }
     }
+  }
+
+  .content {
+    position: absolute;
+    font-size: 16px;
+    color: $text;
+    height: 130px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: color 0.5s ease;
   }
 }
 
 .title {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: white;
-  margin: 20px;
-  opacity: 0;
-  transition: opacity 1s;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  margin: 10px;
+  // opacity: 0;
+  // transition: opacity 1s;
 }
 
 // .fa {
 //   opacity: 0;
 //   transition: opacity 1s;
 // }
-
-.icons {
-  position: absolute;
-  // fill: #fff;
-  color: #fff;
-  height: 130px;
-  bottom: 0;
-  // width: 50px;
-  // font-weight: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}

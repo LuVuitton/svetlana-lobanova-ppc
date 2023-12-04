@@ -1,4 +1,3 @@
-import { StandartProps } from '../commonTypes'
 import s from './index.module.scss'
 import cl from 'classnames'
 
@@ -9,6 +8,7 @@ const Button = ({ className, children, disabled, onClick }: Props) => {
       className={cl(className, s.button)}
       disabled={disabled}
     >
+      <span className={s.spinner}></span>
       {children}
     </button>
   )
@@ -22,3 +22,5 @@ type Props = {
   onClick: () => void
   disabled: boolean
 }
+
+// ;<button className={styles.button}>Configure</button>

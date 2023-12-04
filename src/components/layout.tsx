@@ -6,6 +6,7 @@ export default function Layout({ children }) {
   return (
     <>
       <div className={styles.mainWrapper}>
+        <div className={styles.bg}></div>
       <TheHeader /> 
         <main className={styles.container}>{children}</main>
         {/* <TheFooter /> */}

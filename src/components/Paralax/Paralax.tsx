@@ -9,7 +9,7 @@ const optionParallax:any = {
     "autoPlay": true,
     "background": {
       "color": {
-        "value": "#f5d300"
+        "value": "#fcc707"
       },
       "image": "",
       "position": "50% 50%",

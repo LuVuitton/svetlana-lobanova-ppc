@@ -73,8 +73,8 @@ const Blog = (props: { posts: Post[]; total: number }) => {
           justifyContent: 'center',
           flexWrap: 'wrap',
           gap: '20px',
-          alignItems: "stretch" /* Растянуть элементы по высоте */
-
+          alignItems: 'stretch' /* Растянуть элементы по высоте */,
+          paddingBottom: '20px',
         }}
       >
         {posts.map((e) => (
@@ -86,10 +86,11 @@ const Blog = (props: { posts: Post[]; total: number }) => {
           style={{
             display: 'flex',
             justifyContent: 'center',
+            height: '50px',
           }}
         >
           <Button disabled={loading} onClick={getMorePosts}>
-            {loading ? 'loding...' : 'Load more posts...'}
+            Load more
           </Button>
         </div>
       )}
