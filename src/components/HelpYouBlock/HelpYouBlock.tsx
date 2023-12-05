@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import HelpYouOptions, { SkillData } from '../HelpYouOptions/HelpYouOptions'
 import HelpYouPage from '../HelpYouPage/HelopYouPage'
 
 export default function HelpYouBlock() {
   const [option, setOption] = useState<Options>('options')
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // Прокрутка вверх
+    };
+
+    scrollToTop(); // Вызов функции прокрутки при изменении опции
+  }, [option]);
 
   const componentMap = {
     options: (
