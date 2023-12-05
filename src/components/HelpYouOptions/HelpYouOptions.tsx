@@ -46,7 +46,7 @@ export default function HelpYouOptions({
 
       setList(arr)
     }
-  }, [size.width])
+  }, [size.width, data, callback])
 
   return <div className={styles.mainWrapper}>{list}</div>
 }
