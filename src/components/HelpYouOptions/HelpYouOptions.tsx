@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react'
 import Card from 'react-animated-3d-card'
+
 import CardChild from '~/components/CardChild/CardChild'
+import { useWindowSize } from '~/hooks/useWindowsSize'
+
 import { Options } from '../HelpYouBlock/HelpYouBlock'
 import styles from './index.module.scss'
-import { useEffect, useState } from 'react'
-import { useWindowSize } from '~/hooks/useWindowsSize'
 
 export default function HelpYouOptions({
   callback,

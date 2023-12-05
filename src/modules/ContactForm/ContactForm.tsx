@@ -1,8 +1,10 @@
+import { ErrorMessage } from '@hookform/error-message'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import styles from './index.module.scss'
-import { ErrorMessage } from '@hookform/error-message'
+
 import { Button, Title } from '~/components'
+
+import styles from './index.module.scss'
 
 const URL =
   'https://portfolio-back-6xiy-git-main-luvuitton.vercel.app/sendMessage'
@@ -55,7 +57,6 @@ export default function ContactForm() {
         >
           contacts sent successfully
         </div>
-
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div
@@ -135,11 +136,9 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <Button
-            type="submit"
-            children={isSuccess ? 'success!' : 'send'}
-            disabled={isLoading}
-          />
+          <Button type="submit" disabled={isLoading}>
+            {isSuccess ? 'success!' : 'send'}
+          </Button>
         </div>
       </form>
     </>

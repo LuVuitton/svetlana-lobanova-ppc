@@ -1,4 +1,5 @@
 import cl from 'classnames'
+
 import s from './index.module.scss'
 
 const Title = ({ className, children, type }: Props) => {
