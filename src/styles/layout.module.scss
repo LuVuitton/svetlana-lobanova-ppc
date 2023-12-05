@@ -3,6 +3,8 @@
 .mainWrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Для того чтобы .mainWrapper занимал минимум 100% высоты окна */
+
 
   .bg {
     position: fixed;
@@ -17,7 +19,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     filter: grayscale(100%);
-    opacity: 0.4  ;
+    opacity: 0.4;
 
     @media screen and (max-width: 700px) {
       top: 15%;
@@ -25,14 +27,16 @@
       right: -65%;
       width: 150%;
     }
-
   }
 
   .container {
-    margin-top: 70px ;
+    margin-top: 70px;
     padding: 20px;
-
+    flex-grow: 1;
     // background-color: rgba(4, 4, 4, 0.351)
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     // /* Set a specific height */
     // height: 10%;x
@@ -42,5 +46,11 @@
     // background-repeat: no-repeat;
     // background-size: cover;
     // position: relative;
+  }
+
+  .footer {
+    margin-top: auto; /* Прижимаем футер к низу */
+
+
   }
 }

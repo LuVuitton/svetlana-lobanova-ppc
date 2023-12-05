@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import Button from '../../components/Button'
 import PostItem from '../../components/Post'
-import PostGrid from '../../components/PostGrid'
 import Title from '../../components/Title'
-import s from './index.module.scss'
-import cl from 'classnames'
+
 import { getClient } from '~/lib/sanity.client'
 import { Post, getPosts } from '~/lib/sanity.queries'
 import { GetServerSideProps } from 'next'
@@ -66,11 +64,13 @@ const Blog = (props: { posts: Post[]; total: number }) => {
       <Head>
         <title>Blog</title>
       </Head>
+      <div style={{flexDirection:"column"}}>
       <Title type="medium">Blog</Title>
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
+          // flexDirection: "column", 
           flexWrap: 'wrap',
           gap: '20px',
           alignItems: 'stretch' /* Растянуть элементы по высоте */,
@@ -94,6 +94,7 @@ const Blog = (props: { posts: Post[]; total: number }) => {
           </Button>
         </div>
       )}
+      </div>
     </>
   )
 }

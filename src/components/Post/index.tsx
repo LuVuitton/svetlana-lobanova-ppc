@@ -3,7 +3,7 @@ import s from './index.module.scss'
 import cl from 'classnames'
 
 import { urlForImage } from '~/lib/sanity.image'
-import noArticlePhoto from '../../../public/noArticlePhoto.webp'
+import noArticlePhoto from '../../../public/noArticlePhoto.jpeg'
 import BlogCard from '../BlogCard/BlogCard'
 
 const PostItem = ({ className, postData }: Props) => {

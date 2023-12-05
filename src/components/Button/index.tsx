@@ -20,7 +20,7 @@ type Props = {
   className?: string
   children: React.ReactNode
   onClick: () => void
-  disabled: boolean
+  disabled?: boolean
 }
 
 // ;<button className={styles.button}>Configure</button>

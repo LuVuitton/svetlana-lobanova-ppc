@@ -1,0 +1,261 @@
+// $font: 'Source Sans Pro', sans-serif;
+$color-alpha: #d0f2ee;
+$color-black: #000000c8;
+$color-grey: #6e6e6e;
+$color-white: #fff;
+$mq-xs: 20em;
+$mq-sm: 30em;
+$mq-md: 54em;
+$mq-lg: 64em;
+$mq-xl: 76.5em;
+$mq-xxl: 114em;
+
+@mixin nth-animation-delay($items: 3, $time: 0.1s) {
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      animation-delay: $time * $i;
+    }
+  }
+}
+
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   overflow: auto; /* Позволяет прокручивать содержимое, если оно больше размеров блока */
+
+  .postHeader {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    font-size: 3em;
+    font-weight: 900;
+    line-height: 0.9;
+
+    @media (max-width: $mq-md) {
+      font-size: 2em;
+    }
+  }
+
+  //   figure {
+  //     margin: 0;
+  //   }
+
+  //   ::selection {
+  //     color: $color-white;
+  //     background-color: $color-alpha;
+  //     text-shadow: none;
+  //   }
+
+  .post {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 0.5em solid rgba(255, 255, 255, 0);
+    width: 80vw;
+
+    @media (min-width: $mq-md) {
+      display: flex;
+    }
+
+    & > *:first-child {
+      position: relative;
+
+      height: 14em;
+
+      background-color: $color-black;
+
+      @media (min-width: $mq-sm) {
+        height: 18em;
+      }
+
+      @media (min-width: $mq-md) {
+        flex-basis: 20%;
+        height: auto;
+      }
+
+      @media (min-width: $mq-xl) {
+        flex-basis: 30%;
+      }
+    }
+
+    & > *:last-child {
+      flex-basis: 90%;
+    }
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2em 5em;
+      overflow-y: auto;
+      height: 70vh;
+      @media (max-width: $mq-md) {
+        padding: 0.3em;
+        overflow-y: unset;
+        height: auto;
+      }
+    }
+
+    &Category {
+      position: relative;
+      font-weight: 600;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        height: 2px;
+        width: 3em;
+
+        background-color: $color-black;
+        animation: slide-in 1s ease-in both 0.5s;
+      }
+
+      .btn {
+        padding: 0.5em 1em;
+        font-size: 0.8em;
+        color: $color-grey;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        background-color: #c6c6c619;
+        border: 1px solid $color-grey;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          color: $color-white;
+          background-color: $color-grey;
+        }
+      }
+    }
+
+    &Content {
+      padding: 2em 0;
+
+      @media (min-width: $mq-md) {
+        padding: 0 1em;
+      }
+    }
+
+    &Header {
+      //   overflow: hidden;
+      padding: 20px 0;
+      line-height: 1.1em;
+      // line-height: 3rem;/
+
+      span {
+        @include nth-animation-delay();
+        display: inline-block;
+        animation: slide-up 0.8s ease-in-out both;
+      }
+    }
+
+    &Text {
+      animation: fade-in 0.8s ease-in-out both 0.5s;
+      margin: 0;
+      color: $color-grey;
+      font-size: 16px;
+      .description {
+        line-height: 1.2rem;
+      }
+      .list {
+        padding-top: 35px;
+        h3 {
+          font-weight: 100;
+          color: $color-black;
+        }
+        ul {
+          // font-family: $main_font;
+          font-size: 14px;
+          line-height: 1.5em;
+          margin: 15px 0 25px;
+          padding: 0;
+
+          li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+            padding: 0 0 0 20px;
+            &::before {
+              content: '';
+              position: absolute;
+              left: 2px;
+              top: 5px;
+              width: 3px;
+              height: 6px;
+              border: solid rgb(0, 0, 0);
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+
+    &Link {
+      text-align: right;
+    }
+  }
+
+  /**
+ * Helpers
+ */
+  .absoluteBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../../public/iHelp1.jpeg');
+    height: 100%;
+    width: 100%;
+
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    animation: fade-in 0.8s ease-in-out both 1s;
+  }
+
+  /**
+ * Animations
+ */
+  @keyframes slide-in {
+    0% {
+      transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

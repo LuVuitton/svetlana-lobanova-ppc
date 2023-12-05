@@ -1,11 +1,6 @@
-
-import BgTringles from '~/components/BgTringles/BgTringles'
+import TheSwiper from "~/components/TheSwiper/TheSwiper";
 
 
 export default function Portfolio() {
-
-  return (
-
-<BgTringles/>
-  )
+  return <TheSwiper />
 }

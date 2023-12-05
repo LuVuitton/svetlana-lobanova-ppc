@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import './variables.scss';
 body,
 html,
 #__next {
@@ -26,6 +27,10 @@ button {
 }
 
 :root {
+  --swiper-pagination-color: rgba(0, 0, 0, 0.325);
+  --swiper-navigation-color: rgba(0, 0, 0, 0.619);
+
+
 //   background-color: rgb(255, 193, 148);
 //   background-color: rgb(249, 249, 249);
 //   background: rgb(237, 253, 253);
@@ -41,3 +46,4 @@ body {
   // background-repeat: no-repeat;
   // background-attachment: fixed; /* Background image will not move when scrolling */
 }
+

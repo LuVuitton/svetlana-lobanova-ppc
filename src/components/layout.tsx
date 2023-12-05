@@ -7,9 +7,14 @@ export default function Layout({ children }) {
     <>
       <div className={styles.mainWrapper}>
         <div className={styles.bg}></div>
-      <TheHeader /> 
+        <div className={styles.header}>
+          <TheHeader />
+        </div>
+
         <main className={styles.container}>{children}</main>
-        {/* <TheFooter /> */}
+        <div className={styles.footer}>
+          <TheFooter />
+        </div>
       </div>
     </>
   )
