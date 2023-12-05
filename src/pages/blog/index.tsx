@@ -1,14 +1,15 @@
+import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import { useState } from 'react'
+
+import { readToken } from '~/lib/sanity.api'
+import { getClient } from '~/lib/sanity.client'
+import { getPosts,Post } from '~/lib/sanity.queries'
+import { SharedPageProps } from '~/pages/_app'
+
 import Button from '../../components/Button'
 import PostItem from '../../components/Post'
 import Title from '../../components/Title'
-
-import { getClient } from '~/lib/sanity.client'
-import { Post, getPosts } from '~/lib/sanity.queries'
-import { GetServerSideProps } from 'next'
-import { SharedPageProps } from '~/pages/_app'
-import { readToken } from '~/lib/sanity.api'
-import Head from 'next/head'
 
 const LOAD_STEP = 4
 

@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react'
 import Card from 'react-animated-3d-card'
+
 import CardChild from '~/components/CardChild/CardChild'
-import styles from './index.module.scss'
+
 import { Options } from '../HelpYouBlock/HelpYouBlock'
-import { useEffect } from 'react'
+import styles from './index.module.scss'
 
 export default function HelpYouOptions({
   callback,
@@ -11,10 +13,22 @@ export default function HelpYouOptions({
   callback: (option: Options) => void
   data: SkillData[]
 }) {
-  let isMobile=false;
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-     isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
-  }, []); 
+    const checkIsMobile = () => {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent));
+    };
+
+    if (typeof window !== 'undefined') {
+      checkIsMobile();
+      window.addEventListener('resize', checkIsMobile); // Проверяем при изменении размера окна
+    }
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile); // Очищаем слушатель при размонтировании компонента
+    };
+  }, []);
 
   
   const list = data.map((e) => (

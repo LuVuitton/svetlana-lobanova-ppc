@@ -1,7 +1,9 @@
-import s from './index.module.scss'
-import cl from 'classnames'
 import BlockContent from '@sanity/block-content-to-react'
+import cl from 'classnames'
+
 import { dataset, projectId } from '~/lib/sanity.api'
+
+import s from './index.module.scss'
 
 const Content = ({ className, body }: Props) => {
   return (

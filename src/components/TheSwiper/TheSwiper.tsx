@@ -1,13 +1,15 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/scss'
 import 'swiper/scss/pagination'
 import 'swiper/scss/navigation'
-import styles from './index.module.scss'
-import { Pagination, Navigation, Zoom } from 'swiper/modules'
+
+import Image from 'next/image'
+import React from 'react'
+import { Navigation, Pagination, Zoom } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import img from '../../../public/portfolio1.png'
 import img2 from '../../../public/portfolio2.png'
-import Image from 'next/image'
+import styles from './index.module.scss'
 
 export const portfolioData = [
   {

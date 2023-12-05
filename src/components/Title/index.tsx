@@ -1,7 +1,7 @@
+import cl from 'classnames'
+
 import { PropsWithChild } from '../commonTypes'
 import s from './index.module.scss'
-
-import cl from 'classnames'
 
 const Title = ({ className, children, type }: Props) => {
 

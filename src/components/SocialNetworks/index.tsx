@@ -1,10 +1,11 @@
-import { IconType } from 'react-icons/lib'
-import { StandartProps } from '../commonTypes'
-import s from './index.module.scss'
 import cl from 'classnames'
-import { SiFiverr, SiUpwork, SiLinkedin } from 'react-icons/si'
 import { createElement } from 'react'
+import { IconType } from 'react-icons/lib'
+import { SiFiverr, SiLinkedin,SiUpwork } from 'react-icons/si'
+
+import { StandartProps } from '../commonTypes'
 import ScreenEgg from '../ScreenEgg'
+import s from './index.module.scss'
 
 const networksData: NetworksData[] = [
   {

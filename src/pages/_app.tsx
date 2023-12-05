@@ -4,8 +4,9 @@ import '~/styles/reset.scss'
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
 import { Fragment, lazy } from 'react'
-import Layout from '~/components/layout'
+
 import EmptyLayout from '~/components/EmptyLayout/EmptyLayout'
+import Layout from '~/components/layout'
 
 export interface SharedPageProps {
   draftMode: boolean

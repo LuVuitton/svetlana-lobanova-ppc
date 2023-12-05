@@ -1,5 +1,6 @@
-import s from './index.module.scss'
 import cl from 'classnames'
+
+import s from './index.module.scss'
 
 
 const aboutMeText = {

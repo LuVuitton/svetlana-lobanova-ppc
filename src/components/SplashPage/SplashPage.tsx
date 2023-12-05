@@ -1,8 +1,9 @@
-import Link from 'next/link'
-import styles from './index.module.scss'
 import cl from 'classnames'
+import Link from 'next/link'
+
 import BgText from '../BgText/BgText'
 import { Paralax } from '../Paralax/Paralax'
+import styles from './index.module.scss'
 
 const SplashPage = () => {
   return (

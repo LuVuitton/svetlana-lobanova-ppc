@@ -1,8 +1,9 @@
+import cl from 'classnames'
 import Link from 'next/link'
+import { AiOutlineArrowLeft } from "react-icons/ai";
+
 import { PropsWithChild } from '../commonTypes'
 import s from './index.module.scss'
-import cl from 'classnames'
-import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Article = ({ className, children, backUrl }: Props) => {
   return (

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import styles from './index.module.scss'
 import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+
 import BurgerBtn from '../BurgerBtn/BurgerBtn'
 import BurgerMenu from '../BurgerMenu'
+import styles from './index.module.scss'
 
 const links = [
   {

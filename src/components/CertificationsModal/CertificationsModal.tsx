@@ -1,6 +1,7 @@
-import React from 'react';
-import styles from './index.module.scss'; // Подключаем стили
 import Image from 'next/image';
+import React from 'react';
+
+import styles from './index.module.scss'; // Подключаем стили
 
 interface CardProps {
     imageSrc: any;

@@ -1,8 +1,8 @@
+import cl from 'classnames'
 import { ReactNode } from 'react'
+
 import { PropsWithChild, StandartProps } from '../commonTypes'
 import s from './index.module.scss'
-
-import cl from 'classnames'
 
 const ScreenEgg = ({ className, children, type }: Props) => {
   return (

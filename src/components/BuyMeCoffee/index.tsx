@@ -1,7 +1,8 @@
-import ScreenEgg from '../ScreenEgg'
-import { StandartProps } from '../commonTypes'
-import s from './index.module.scss'
 import cl from 'classnames'
+
+import { StandartProps } from '../commonTypes'
+import ScreenEgg from '../ScreenEgg'
+import s from './index.module.scss'
 
 const BuyMeCoffee = ({ className }: StandartProps) => {
   return (

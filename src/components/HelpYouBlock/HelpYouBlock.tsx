@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import styles from './index.module.scss'
+
 import HelpYouOptions, { SkillData } from '../HelpYouOptions/HelpYouOptions'
 import HelpYouPage from '../HelpYouPage/HelopYouPage'
+import styles from './index.module.scss'
 
 export default function HelpYouBlock() {
   const [option, setOption] = useState<Options>('options')

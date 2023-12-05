@@ -1,9 +1,10 @@
 // CardComponent.tsx
 
-import React from 'react'
-import styles from './index.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
+
+import styles from './index.module.scss'
 
 const BlogCard: React.FC<Props> = ({ title, description, img, date, link }) => {
   return (

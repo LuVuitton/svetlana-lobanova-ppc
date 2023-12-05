@@ -1,8 +1,9 @@
 // ModalDialog.tsx
 
 import React from 'react'
-import styles from './index.module.scss'
 import { IoMdClose } from 'react-icons/io'
+
+import styles from './index.module.scss'
 
 interface ModalDialogProps {
   show?: boolean

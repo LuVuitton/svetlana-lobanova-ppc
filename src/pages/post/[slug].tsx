@@ -1,8 +1,10 @@
 import { PortableText } from '@portabletext/react'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 import { useLiveQuery } from 'next-sanity/preview'
 
+import { Article, Content, Title } from '~/components'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { urlForImage } from '~/lib/sanity.image'
@@ -14,8 +16,7 @@ import {
 } from '~/lib/sanity.queries'
 import type { SharedPageProps } from '~/pages/_app'
 import { formatDate } from '~/utils'
-import { Article, Content, Title } from '~/components'
-import Head from 'next/head'
+
 import s from './style.module.scss'
 
 export default function ProjectSlugRoute(
