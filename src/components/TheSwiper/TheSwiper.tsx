@@ -12,13 +12,13 @@ import img2 from '../../../public/portfolio2.png'
 import Image from 'next/image'
 
 export const imagesData = [
-  { src: img, alt: 'First' },
-  { src: img2, alt: 'Second' },
+  { id: 1, src: img, alt: 'First' },
+  { id: 2, src: img2, alt: 'Second' },
 ]
 
 export default function TheSwiper() {
   const images = imagesData.map((e) => (
-    <SwiperSlide className={styles.swiperSlide}>
+    <SwiperSlide className={styles.swiperSlide} key={e.id}>
       <div className={styles.title}>title</div>
       <Image src={e.src} alt={e.alt} />
 
