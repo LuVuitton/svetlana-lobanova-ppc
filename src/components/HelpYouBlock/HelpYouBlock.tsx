@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import HelpYouOptions, { SkillData } from '../HelpYouOptions/HelpYouOptions'
 import HelpYouPage from '../HelpYouPage/HelopYouPage'
 import styles from './index.module.scss'
+import { useWindowSize } from '~/hooks/useWindowsSize'
 
 export default function HelpYouBlock() {
   const [option, setOption] = useState<Options>('options')
+
 
   useEffect(() => {
     const scrollToTop = () => {
@@ -20,6 +22,7 @@ export default function HelpYouBlock() {
       <HelpYouOptions
         data={skillData}
         callback={(option) => setOption(option)}
+
       />
     ),
     ads: (
