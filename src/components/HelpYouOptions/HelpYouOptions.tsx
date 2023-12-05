@@ -14,7 +14,6 @@ export default function HelpYouOptions({
   let isMobile=false;
   useEffect(() => {
      isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
-
   }, []); 
 
   
