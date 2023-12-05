@@ -4,7 +4,7 @@
   max-width: 1300px;
   margin: 0 auto;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.729);
+  background-color: rgba(255, 255, 255, 0.9);
 
   &Back {
     position: absolute;
@@ -23,7 +23,7 @@
 
 @media only screen and (max-width: 800px) {
   .article {
-    padding: 0;
+    padding: 14px;
 
     &Back {
       position: static;

@@ -19,7 +19,7 @@ const HelpYouPage = ({ data, callback }: Props) => {
         <div className={styles.postContainer}>
           <div className={styles.postContent}>
             <span className={styles.postCategory}>
-              <div>How I can help you</div>
+              <div>what I do</div>
               <div onClick={callback}>
                 <button className={styles.btn}>back</button>
               </div>

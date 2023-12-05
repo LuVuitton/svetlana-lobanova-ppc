@@ -1,0 +1,90 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  // max-width: 500px;
+  width: 30vw;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.689);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+
+  transition: background-color 3s ease;
+
+  @media screen and (max-width: 1000px) {
+    width: 50vw;
+  }
+  @media screen and (max-width: 600px) {
+    width: 65vw;
+  }
+}
+
+.success {
+  background-color: rgba(0, 128, 0, 0.119);
+  transition: background-color 0.5s ease;
+}
+
+.fieldWrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  .formInput {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    resize: none;
+    border: 2px solid #000000b8;
+    width: calc(100% - 25px);
+    padding: 10px;
+
+    &:focus {
+      border-color: green;
+      outline: none;
+    }
+  }
+  .error {
+    position: absolute;
+    top: 47px;
+    left: 0px;
+    font-size: 0.8rem; /* Регулирует размер текста сообщения об ошибке */
+    color: rgb(255, 77, 77); /* Цвет текста ошибки */
+  }
+  .redBorder {
+    border-color: rgb(
+      255,
+      77,
+      77
+    ) !important; /* Используем !important для обеспечения приоритета стиля */
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.animatedBlock {
+  position: fixed;
+  top: -100px; /* Начальное положение за пределами экрана сверху */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(81 165 4 / 74%);
+  padding: 20px;
+  border-radius: 2px;
+  opacity: 0;
+  width: 280px;
+  text-align: center;
+  color: #ffffffc9;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+
+
+  transition:
+    top 0.5s ease,
+    opacity 0.5s ease; /* Анимация для появления и исчезновения */
+
+  &.visible {
+    top: 80px;
+    opacity: 1;
+    // background-color: rgb(81 165 4 / 74%);
+  }
+}
