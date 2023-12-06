@@ -51,6 +51,8 @@ $cardColorHover: rgba(0, 0, 0, 0.346);;
     color 0.5s ease; /* Добавляем transition для плавного изменения цвета текста */
 
   &0 {
+    z-index: 999;
+
     background: url('../../../public/Google_Ads_logo-min.png') center center
       no-repeat;
     background-size: 300px;
@@ -73,6 +75,8 @@ $cardColorHover: rgba(0, 0, 0, 0.346);;
   }
 
   &1 {
+    z-index: 999;
+
     background: url('../../../public/Google_Search_logo-min.png') center center
       no-repeat;
     background-size: 300px;
@@ -96,6 +100,7 @@ $cardColorHover: rgba(0, 0, 0, 0.346);;
   }
 
   &2 {
+    z-index: 999;
     background: url('../../../public/Google_Shoping_logo-min.png') center center
       no-repeat;
     background-size: 300px;

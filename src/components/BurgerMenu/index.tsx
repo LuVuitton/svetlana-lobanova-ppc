@@ -20,7 +20,11 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ show, callback }) => {
 
   const burgerClasses = show ? `${styles.burger} ${styles.show}` : styles.burger
 
-  return <div className={burgerClasses}>{linksArr}</div>
+  return (
+    <div className={burgerClasses}>
+      {linksArr} <li className={styles.item}></li>
+    </div>
+  )
 }
 
 export default BurgerMenu

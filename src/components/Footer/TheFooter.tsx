@@ -1,27 +1,28 @@
 // Footer.tsx
-import React from 'react';
+import React from 'react'
 
-import styles from './index.module.scss';
-import Link from 'next/link';
+import styles from './index.module.scss'
+import Link from 'next/link'
 
 const TheFooter: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.row}>
         <ul>
-          <li>hello@gmail.com</li>
-          <li>+3900000000</li>
-          <li>Rozzano Italy</li>
-          <li><Link href="./contacts">Contact Me</Link></li>
-          {/* <li><Link href="#">Contact us</Link></li> */}
+          <li>Email: info@example.com</li>
+          <li>Phone: +1234567890</li>
+          <li>Italy, Postal Code</li>
+          <li>
+            <Link href="./contacts">Contact Me</Link>
+          </li>
         </ul>
       </div>
 
       <div className={styles.row}>
-         2023 
+        © 2023 Company Name. All rights reserved."
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default TheFooter;
+export default TheFooter
