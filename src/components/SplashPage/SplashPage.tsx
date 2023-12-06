@@ -22,7 +22,7 @@ const SplashPage = () => {
         </div>
       </div>
       <div className={styles.text}>
-      {/* <Paralax /> */}
+      <Paralax />
         <BgText/>
         <div className={styles.skills}>
           <p className={styles.min}>PPC specialist</p>
