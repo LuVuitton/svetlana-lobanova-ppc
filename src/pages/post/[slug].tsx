@@ -1,13 +1,10 @@
-import { PortableText } from '@portabletext/react'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { useLiveQuery } from 'next-sanity/preview'
-
 import { Article, Content, Title } from '~/components'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
-import { urlForImage } from '~/lib/sanity.image'
+
 import {
   getPost,
   type Post,
@@ -25,7 +22,6 @@ export default function ProjectSlugRoute(
   const [post] = useLiveQuery(props.post, postBySlugQuery, {
     slug: props.post.slug.current,
   })
-
 
   return (
     <div>
@@ -50,7 +46,7 @@ export default function ProjectSlugRoute(
         </div>
       </section> */}
 
-      <Article backUrl="/" className={s.post}>
+      <Article backUrl="/blog" className={s.post}>
         <Head>
           <title>{post.meta_title}</title>
         </Head>

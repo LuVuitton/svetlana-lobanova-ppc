@@ -1,4 +1,6 @@
 /* Стили для карточки */
+@import '../../styles/variables.scss';
+
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -8,6 +10,11 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: #fff;
+
+
+
+ 
+  
 }
 
 .imgWrapper {
@@ -25,12 +32,16 @@
   height: auto; /* Автоматическая высота изображения */
   object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполнило свою область */
   animation: slideIn 0.4s ease-out forwards; /* Анимация изменения transform */
-  transform: translateX(-100%); /* Начальное положение изображения за пределами контейнера слева */
+  transform: translateX(
+    -100%
+  ); 
 }
 
 @keyframes slideIn {
   to {
-    transform: translateX(0); /* Конечное положение изображения на свое место справа */
+    transform: translateX(
+      0
+    ); /* Конечное положение изображения на свое место справа */
   }
 }
 
@@ -38,4 +49,32 @@
   flex: 1;
   padding: 20px;
   min-width: 300px;
+  -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  
+
+  & .cardText {
+    padding-top: 50px;
+    font-size: 15px;
+    
+  }
+
+  & .cardTitle {
+    font-weight: 100;
+  }
+}
+
+
+
+@keyframes flip-in-hor-bottom {
+  0% {
+    -webkit-transform: rotateX(80deg);
+            transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
 }

@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react'
 import BurgerBtn from '../BurgerBtn/BurgerBtn'
 import BurgerMenu from '../BurgerMenu'
 import styles from './index.module.scss'
+import Link from 'next/link'
 
-const links = [
+export const headerLinks = [
   {
     id: 1,
     herf: '/blog',
@@ -18,19 +19,21 @@ const links = [
   },
   {
     id: 3,
-    herf: '/portfolio',
-    linkName: 'portfolio',
-  },
-  {
-    id: 4,
-    herf: '/certifications',
-    linkName: 'certificate',
-  },
-  {
-    id: 5,
     herf: '/howcanihelp',
     linkName: 'how I can help you',
   },
+
+  {
+    id: 4,
+    herf: '/certifications',
+    linkName: 'certifications',
+  },
+  {
+    id: 5,
+    herf: '/portfolio',
+    linkName: 'portfolio',
+  },
+  ,
 ]
 
 const TheHeader: React.FC = () => {
@@ -49,19 +52,19 @@ const TheHeader: React.FC = () => {
     }
   }, [])
 
-  const burgerHandler = ()=> {
+  const burgerHandler = () => {
     setShowMenu(!showMenu)
   }
 
-  const linksArr = links.map((e) => {
+  const linksArr = headerLinks.map((e) => {
     return (
       <li key={e.id}>
-        <a
+        <Link
           href={e.herf}
           className={e.herf === router.pathname ? styles.active : ''}
         >
           {e.linkName}
-        </a>
+        </Link>
       </li>
     )
   })
@@ -69,18 +72,23 @@ const TheHeader: React.FC = () => {
     <div className={styles.mainWrapper}>
       <header>
         {isMobile ? (
-          <ul className={styles.mobileMenu}>
+          <ul
+            className={
+              showMenu
+                ? `${styles.mobileMenu} ${styles.showMenu}`
+                : styles.mobileMenu
+            }
+          >
+            <div className={styles.userName}>
+              <Link href={'./contacts'}>Contact Me</Link>
+            </div>
             <BurgerBtn isOpen={showMenu} callback={burgerHandler} />
-            <div className={styles.userName}>Svetlana Lobanova</div>
           </ul>
         ) : (
-          <ul className={styles.menu}>
-            {linksArr}
-          </ul>
+          <ul className={styles.menu}>{linksArr}</ul>
         )}
       </header>
-      <BurgerMenu show={showMenu}/>
-
+      <BurgerMenu show={showMenu} callback={burgerHandler} />
     </div>
   )
 }

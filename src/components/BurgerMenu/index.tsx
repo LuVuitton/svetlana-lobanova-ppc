@@ -1,33 +1,31 @@
-import React from 'react';
+import React from 'react'
 
-import styles from './index.module.scss';
+import styles from './index.module.scss'
+import { headerLinks } from '../Header/TheHeader'
+import Link from 'next/link'
 
-interface BurgerMenuProps {
-  show: boolean;
+const BurgerMenu: React.FC<BurgerMenuProps> = ({ show, callback }) => {
+  const linksArr = headerLinks.map((e) => {
+    return (
+      <Link
+        href={e.herf}
+        onClick={() => callback()}
+        className={styles.item}
+        key={e.id}
+      >
+        <li>{e.linkName}</li>
+      </Link>
+    )
+  })
+
+  const burgerClasses = show ? `${styles.burger} ${styles.show}` : styles.burger
+
+  return <div className={burgerClasses}>{linksArr}</div>
 }
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({ show }) => {
+export default BurgerMenu
 
-  return (
-    <div className={styles.container}>
-      <nav>
-        <ul style={{ visibility: show ? 'visible' : 'hidden', opacity: show ? '1' : '0' }}>
-          <li>
-            <a href="#chapter1">Chapter 01</a>
-          </li>
-          <li>
-            <a href="#chapter2">Chapter 02</a>
-          </li>
-          <li>
-            <a href="#chapter3">Chapter 03</a>
-          </li>
-          <li>
-            <a href="#chapter4">Chapter 04</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
-};
-
-export default BurgerMenu;
+interface BurgerMenuProps {
+  show: boolean
+  callback: () => void
+}

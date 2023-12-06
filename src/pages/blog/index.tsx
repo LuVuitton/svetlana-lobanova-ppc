@@ -66,12 +66,11 @@ const Blog = (props: { posts: Post[]; total: number }) => {
         <title>Blog</title>
       </Head>
       <div style={{flexDirection:"column"}}>
-      <Title type="medium">Blog</Title>
+      <Title type="small">Blog</Title>
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
-          // flexDirection: "column", 
           flexWrap: 'wrap',
           gap: '20px',
           alignItems: 'stretch' /* Растянуть элементы по высоте */,

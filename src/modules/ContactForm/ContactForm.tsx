@@ -123,7 +123,7 @@ export default function ContactForm() {
           <div className={styles.fieldWrapper}>
             <input
               type="url"
-              placeholder="your website"
+              placeholder="Your website"
               {...register('website', { min: 3, maxLength: 200 })}
               className={
                 errors['website']

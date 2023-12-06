@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import styles from './index.module.scss'
+import { formatDate } from '~/utils'
 
 const BlogCard: React.FC<Props> = ({ title, description, img, date, link }) => {
   return (
@@ -22,7 +23,7 @@ const BlogCard: React.FC<Props> = ({ title, description, img, date, link }) => {
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
-      <div className={styles.date}>{date}</div>
+      <div className={styles.date}>{formatDate(date)}</div>
       </Link>
 
   )

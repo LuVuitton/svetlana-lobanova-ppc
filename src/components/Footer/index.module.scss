@@ -1,25 +1,26 @@
 @import '../../styles/variables.scss';
 // index.module.scss
 .footer {
-  background: #000;
+  background: rgba(0, 0, 0, 0.07);
   padding: 30px 0px;
   font-family: 'Play', sans-serif;
   text-align: center;
   // position: fixed;
   // bottom: 0;
   // width: 100%;
-
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(5px);
 
   .row {
     width: 100%;
     // margin: 1% 0%;
     padding: 0.6% 0%;
-    color: gray;
+    color: $text;
     font-size: 0.8em;
 
     a {
       text-decoration: none;
-      color: gray;
+      color: $text;
       transition: 0.5s;
 
       &:hover {

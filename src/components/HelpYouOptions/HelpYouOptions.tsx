@@ -20,9 +20,7 @@ export default function HelpYouOptions({
 
   useEffect(() => {
     if (typeof window !== 'undefined' && size.width !== undefined) {
-      console.log(typeof window !== 'undefined')
-      console.log(size.width !== undefined)
-      console.log(size.width)
+
 
       const arr = data.map((e) => (
         <Card
@@ -33,7 +31,7 @@ export default function HelpYouOptions({
             height: '450px',
             cursor: 'pointer',
           }}
-          isStatic={size.width < 800}
+          isStatic={size.width < 900}
           shineStrength={0.07}
           onClick={() => callback(e.optionName)}
           className={styles.card}

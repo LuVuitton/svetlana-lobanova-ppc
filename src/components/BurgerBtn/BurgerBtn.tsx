@@ -11,10 +11,7 @@ interface Props {
 
 
 const BurgerBtn: React.FC<Props> = ({callback, isOpen}) => {
-  // const [isOpen, setIsOpen] = useState(false)
-
   const handleClick = () => {
-    // setIsOpen((prevState) => !prevState)
     callback()
   }
 
