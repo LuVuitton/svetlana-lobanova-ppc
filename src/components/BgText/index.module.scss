@@ -13,8 +13,10 @@
 .text {
   margin: 0;
   font-size: 3rem;
-  color: rgba(225, 225, 225, .01);
-  background-image: url("../../../public/bgText.jpeg");
+  // color: rgba(225, 225, 225, .01);
+  color: rgb(0 0 0 / 17%);
+  // background-image: url("../../../public/bgText.jpeg");
+  background-image: url("../../../public/bgText.png");
   background-repeat: repeat;
   -webkit-background-clip: text;
   animation: animate 9s ease-in-out infinite;

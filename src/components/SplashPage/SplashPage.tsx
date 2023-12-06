@@ -39,11 +39,10 @@ const SplashPage = () => {
           conversions for every type of business.
         </p>
         <div className={styles.grid}>
-          <Link href={'howcanihelp'}className={styles.gridItem}>How can I help you</Link>
-          <Link href={'skills'}className={styles.gridItem}>skills</Link>
-          <Link href={'portfolio'}className={styles.gridItem}>Portfolio</Link>
-          <Link href={'certifications'}className={styles.gridItem}>Certifications</Link>
-          <Link href={'blog'}className={styles.gridItem}>Blog</Link>
+          <Link href={'howcanihelp'}className={styles.gridItem}>How I can help you</Link>
+          {/* <Link href={'portfolio'}className={styles.gridItem}>Portfolio</Link> */}
+          {/* <Link href={'certifications'}className={styles.gridItem}>Certifications</Link> */}
+          {/* <Link href={'blog'}className={styles.gridItem}>Blog</Link> */}
           <Link href={'contacts'}className={styles.gridItem}>Contacts</Link>
         </div>
       </div>

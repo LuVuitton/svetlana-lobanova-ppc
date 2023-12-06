@@ -9,7 +9,7 @@ const TheFooter: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.row}>
         <ul>
-          <li>helloworld@gmail.com</li>
+          <li>hello@gmail.com</li>
           <li>+3900000000</li>
           <li>Rozzano Italy</li>
           <li><Link href="./contacts">Contact Me</Link></li>
@@ -18,7 +18,7 @@ const TheFooter: React.FC = () => {
       </div>
 
       <div className={styles.row}>
-         2023 || Designed By: Me
+         2023 
       </div>
     </footer>
   );

@@ -26,12 +26,13 @@ export default function HelpYouOptions({
         <Card
           key={e.id}
           style={{
-            backgroundColor: '#213922',
+            // backgroundColor: '#213922',
+            backgroundColor: '#2b2b2b',
             width: '320px',
             height: '450px',
             cursor: 'pointer',
           }}
-          isStatic={size.width < 900}
+          isStatic={size.width < 1190}
           shineStrength={0.07}
           onClick={() => callback(e.optionName)}
           className={styles.card}

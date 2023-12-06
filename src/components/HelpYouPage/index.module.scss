@@ -223,6 +223,9 @@ $mq-xxl: 114em;
     background-size: cover;
     overflow: hidden;
     animation: fade-in 0.8s ease-in-out both 1s;
+
+    filter: grayscale(100%); /* Обесцвечивание картинки на 100% */
+
   }
 
   /**

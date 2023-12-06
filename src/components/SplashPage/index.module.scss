@@ -57,7 +57,7 @@
   margin: 0 0 0 -150px;
   width: 300px;
   height: 100px;
-  top: 3%;
+  top: 10vh;
   left: 50%;
   font-size: 48px;
   font-weight: 700;
@@ -101,9 +101,9 @@
     grid-gap: 1px; /* Отступ между элементами */
     height: auto; /* Установка автоматической высоты */
     &Item {
-      background: $bg;
-      border: 1px solid $bg;
-      padding: 10px;
+      background: #2f2f2f;
+      border: 1px solid #2f2f2f;
+      padding: 20px;
       color: #fcc707;
       font-size: 20px;
       font-weight: 200;
