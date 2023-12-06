@@ -1,8 +1,8 @@
 // Footer.tsx
+import Link from 'next/link'
 import React from 'react'
 
 import styles from './index.module.scss'
-import Link from 'next/link'
 
 const TheFooter: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const TheFooter: React.FC = () => {
       </div>
 
       <div className={styles.row}>
-        © 2023 Company Name. All rights reserved."
+        © 2023 Company Name. All rights reserved.
       </div>
     </footer>
   )

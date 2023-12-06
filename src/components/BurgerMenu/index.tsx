@@ -1,8 +1,8 @@
+import Link from 'next/link'
 import React from 'react'
 
-import styles from './index.module.scss'
 import { headerLinks } from '../Header/TheHeader'
-import Link from 'next/link'
+import styles from './index.module.scss'
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ show, callback }) => {
   const linksArr = headerLinks.map((e) => {

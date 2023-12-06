@@ -1,10 +1,10 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import { useLiveQuery } from 'next-sanity/preview'
+
 import { Article, Content, Title } from '~/components'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
-
 import {
   getPost,
   type Post,
